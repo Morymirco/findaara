@@ -1,0 +1,30 @@
+.custom-dots {
+  bottom: -40px;
+}
+
+.custom-dots li button:before {
+  color: #EAB308 !important; /* yellow-500 */
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.custom-dots li.slick-active button:before {
+  opacity: 1;
+}
+
+.slick-slide {
+  transition: transform 0.3s ease;
+}
+
+.slick-center {
+  transform: scale(1.05);
+}
+
+/* Animation pour les flèches */
+.slick-arrow {
+  transition: all 0.3s ease;
+}
+
+.slick-arrow:hover {
+  transform: scale(1.1) translate(-50%, -50%);
+} 
