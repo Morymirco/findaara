@@ -206,8 +206,8 @@ export default function SolutionsPage() {
     <>
       <Header />
       <main className="min-h-screen bg-black">
-        {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black to-red-900 pt-20">
+        {/* Hero Section - Gradient plus doux */}
+        <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black via-red-950 to-red-900/80 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
             <Image
               src="/images/solutions-hero.jpg"
@@ -272,7 +272,7 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-red-900/50 rounded-xl overflow-hidden"
+                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden"
                 >
                   <div className="relative h-48">
                     <Image
@@ -307,11 +307,7 @@ export default function SolutionsPage() {
                 {incubators.map((incubator, index) => (
                   <InteractiveModel
                     key={index}
-                    images={{
-                      front: incubator.images.front,
-                      side: incubator.images.side,
-                      perspective: incubator.images.perspective
-                    }}
+                    images={incubator.images}
                     title={incubator.title}
                   />
                 ))}
@@ -320,8 +316,8 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Application Mobile Section */}
-        <section className="py-20 bg-red-900/20">
+        {/* Application Mobile Section - Background plus subtil */}
+        <section className="py-20 bg-gradient-to-b from-red-950/20 to-red-900/10">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
@@ -416,7 +412,7 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-red-900 p-8 rounded-xl"
+                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm p-8 rounded-xl border border-red-900/20"
                 >
                   <h3 className="text-xl font-bold mb-4 text-yellow-500">
                     {feature.title}
@@ -436,8 +432,8 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Services Complémentaires */}
-        <section className="py-20 bg-red-900/20">
+        {/* Services Section - Background plus raffiné */}
+        <section className="py-20 bg-gradient-to-b from-red-950/10 to-red-900/5">
           <div className="container mx-auto px-4">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
@@ -453,7 +449,7 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-red-900 p-6 rounded-xl text-center"
+                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm p-8 rounded-xl border border-red-900/20"
                 >
                   <div className="text-4xl mb-4">{service.icon}</div>
                   <h3 className="text-xl font-bold mb-4 text-yellow-500">

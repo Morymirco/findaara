@@ -1,13 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import MotionWrapper from '../components/MotionWrapper'
 import Image from 'next/image'
-import Header from '../components/Header'
-import TestimonialCard from '../components/TestimonialCard'
-import NewsCard from '../components/NewsCard'
 import Link from 'next/link'
 import ClientCarousel from '../components/ClientCarousel'
+import Header from '../components/Header'
+import MotionWrapper from '../components/MotionWrapper'
+import NewsCard from '../components/NewsCard'
+import TestimonialCard from '../components/TestimonialCard'
+import TypewriterText from '../components/TypewriterText'
 
 export default function HomePage() {
   const containerVariants = {
@@ -37,19 +38,15 @@ export default function HomePage() {
           className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-black to-red-900 pt-20"
         >
           <div className="container mx-auto px-4 text-center text-white relative z-10">
-            <motion.h1
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl font-bold mb-6"
-            >
-              Révolutionnez l'élevage avicole avec des solutions intelligentes et durables
-            </motion.h1>
+            <TypewriterText
+              text="Révolutionnez l'élevage avicole avec des solutions intelligentes et durables"
+              className="text-5xl font-bold mb-6 text-yellow-500"
+            />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl mb-8"
+              className="text-xl mb-8 text-yellow-200"
             >
               Des couveuses intelligentes. Une application mobile performante. Une productivité augmentée.
             </motion.p>
