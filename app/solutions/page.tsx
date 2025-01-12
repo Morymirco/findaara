@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Header from '../components/Header'
-import MotionWrapper from '../components/MotionWrapper'
 import InteractiveModel from '../components/InteractiveModel'
+import MotionWrapper from '../components/MotionWrapper'
 
 // Ajouter l'interface pour le type Incubator
 interface Incubator {
@@ -67,11 +67,11 @@ export default function SolutionsPage() {
       title: "Couveuse Mini",
       type: "Débutant",
       description: "La solution idéale pour débuter dans l'élevage avicole",
-      image: "/images/couveuse-mini.jpg",
+      image: "/images/couveuse_1.jpg",
       images: {
-        front: "/images/couveuse-mini/front.jpg",
-        side: "/images/couveuse-mini/side.jpg",
-        perspective: "/images/couveuse-mini/perspective.jpg"
+        front: "/images/couveuse_1.jpg",
+        side: "/images/couveuse_2.jpg",
+        perspective: "/images/couveuse_5.jpg"
       },
       price: "1 500 000 GNF à 2 500 000 GNF",
       capacity: "60 à 120 œufs",
@@ -92,11 +92,11 @@ export default function SolutionsPage() {
       title: "Couveuse Midi",
       type: "Professionnel",
       description: "Pour les exploitations de taille moyenne",
-      image: "/images/couveuse-midi.jpg",
+      image: "/images/couveuse_1.jpg",
       images: {
-        front: "/images/couveuse-midi/front.jpg",
-        side: "/images/couveuse-midi/side.jpg",
-        perspective: "/images/couveuse-midi/perspective.jpg"
+        front: "/images/couveuse_1.jpg",
+        side: "/images/couveuse_2.jpg",
+        perspective: "/images/couveuse_5.jpg"
       },
       price: "3 000 000 GNF à 7 000 000 GNF",
       capacity: "120 à 500 œufs",
@@ -117,11 +117,11 @@ export default function SolutionsPage() {
       title: "Couveuse Max Pro",
       type: "Industriel",
       description: "La solution pour les grandes exploitations",
-      image: "/images/couveuse-max.jpg",
+      image: "/images/couveuse_3.jpg",
       images: {
-        front: "/images/couveuse-max/front.jpg",
-        side: "/images/couveuse-max/side.jpg",
-        perspective: "/images/couveuse-max/perspective.jpg"
+        front: "/images/couveuse_1.jpg",
+        side: "/images/couveuse_2.jpg",
+        perspective: "/images/couveuse_5.jpg"
       },
       price: "8 000 000 GNF à 15 000 000 GNF",
       capacity: "500 à 1000 œufs",
@@ -206,8 +206,8 @@ export default function SolutionsPage() {
     <>
       <Header />
       <main className="min-h-screen bg-black">
-        {/* Hero Section - Gradient plus doux */}
-        <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black via-red-950 to-red-900/80 pt-20">
+        {/* Hero Section */}
+        <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black via-white/5 to-red-900 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
             <Image
               src="/images/solutions-hero.jpg"
@@ -216,12 +216,12 @@ export default function SolutionsPage() {
               objectFit="cover"
             />
           </div>
-          <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="container mx-auto px-4 max-w-5xl text-center relative z-10">
             <motion.h1
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl font-bold mb-6 text-yellow-500"
+              className="text-5xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text"
             >
               Nos Solutions Innovantes
             </motion.h1>
@@ -229,7 +229,7 @@ export default function SolutionsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-yellow-200 max-w-3xl mx-auto"
+              className="text-xl text-white/90 max-w-3xl mx-auto"
             >
               Des solutions technologiques avancées pour révolutionner l'élevage avicole
             </motion.p>
@@ -238,15 +238,15 @@ export default function SolutionsPage() {
 
         {/* Couveuses Section */}
         <section className="py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
-              <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
+              <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
                 Couveuses Intelligentes
               </h2>
             </MotionWrapper>
 
             {/* Caractéristiques principales */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -254,11 +254,11 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-red-900 p-6 rounded-xl"
+                  className="bg-gradient-to-br from-red-950 to-red-900/80 p-6 rounded-xl border border-white/10"
                 >
                   <div className="text-3xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-bold mb-3 text-yellow-500">{feature.title}</h3>
-                  <p className="text-yellow-100">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-white/80">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -272,7 +272,7 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm border border-red-900/20 rounded-xl overflow-hidden"
+                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden shadow-lg hover:shadow-white/5 transition-all duration-300"
                 >
                   <div className="relative h-48">
                     <Image
@@ -316,16 +316,16 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Application Mobile Section - Background plus subtil */}
-        <section className="py-20 bg-gradient-to-b from-red-950/20 to-red-900/10">
-          <div className="container mx-auto px-4">
+        {/* Application Mobile Section */}
+        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+          <div className="container mx-auto px-4 max-w-6xl">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
                 <MotionWrapper>
-                  <h2 className="text-4xl font-bold mb-8 text-yellow-500">
+                  <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
                     Application Mobile
                   </h2>
-                  <p className="text-yellow-100 mb-8">
+                  <p className="text-white/90 mb-8">
                     Une solution technologique pour gérer votre élevage à distance.
                   </p>
                 </MotionWrapper>
@@ -357,11 +357,11 @@ export default function SolutionsPage() {
 
               <div className="flex-1">
                 <Image
-                  src="/images/app-mockup.png"
+                  src="/images/app.png"
                   alt="Application FINDAARA"
                   width={500}
                   height={600}
-                  className="rounded-xl shadow-lg"
+                  className="rounded-xl shadow-lg border border-white/10"
                 />
               </div>
             </div>
@@ -370,18 +370,18 @@ export default function SolutionsPage() {
 
         {/* Ferme Intelligente Section */}
         <section className="py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
-              <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
+              <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
                 Ferme Intelligente
               </h2>
             </MotionWrapper>
 
-            {/* Remplacer la visualisation 3D par une image interactive */}
-            <div className="mb-16">
-              <div className="relative h-[500px] rounded-xl overflow-hidden">
+            {/* Image interactive */}
+            <div className="mb-16 max-w-5xl mx-auto">
+              <div className="relative h-[500px] rounded-xl overflow-hidden border border-white/10">
                 <Image
-                  src="/images/smart-farm.jpg"
+                  src="/images/ferme2.jpg"
                   alt="Ferme Intelligente FINDAARA"
                   fill
                   className="object-cover"
@@ -399,12 +399,12 @@ export default function SolutionsPage() {
               </div>
             </div>
 
-            <p className="text-yellow-100 text-center max-w-3xl mx-auto mb-12">
+            <p className="text-white/90 text-center max-w-3xl mx-auto mb-12">
               Une solution globale pour une production avicole durable et efficace, intégrant 
               les dernières innovations technologiques.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {farmFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -412,16 +412,16 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm p-8 rounded-xl border border-red-900/20"
+                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300"
                 >
-                  <h3 className="text-xl font-bold mb-4 text-yellow-500">
+                  <h3 className="text-xl font-bold mb-4 text-white">
                     {feature.title}
                   </h3>
-                  <p className="text-yellow-100 mb-4">{feature.description}</p>
+                  <p className="text-white/80 mb-4">{feature.description}</p>
                   <ul className="space-y-2">
                     {feature.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center text-yellow-200">
-                        <span className="text-yellow-500 mr-2">✓</span>
+                      <li key={idx} className="flex items-center text-white/80">
+                        <span className="text-white mr-2">✓</span>
                         {benefit}
                       </li>
                     ))}
@@ -432,16 +432,16 @@ export default function SolutionsPage() {
           </div>
         </section>
 
-        {/* Services Section - Background plus raffiné */}
-        <section className="py-20 bg-gradient-to-b from-red-950/10 to-red-900/5">
-          <div className="container mx-auto px-4">
+        {/* Services Section */}
+        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
-              <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
+              <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
                 Services Complémentaires
               </h2>
             </MotionWrapper>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {services.map((service, index) => (
                 <motion.div
                   key={index}
@@ -449,13 +449,13 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm p-8 rounded-xl border border-red-900/20"
+                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm p-8 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300"
                 >
                   <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-bold mb-4 text-yellow-500">
+                  <h3 className="text-xl font-bold mb-4 text-white">
                     {service.title}
                   </h3>
-                  <p className="text-yellow-100">{service.description}</p>
+                  <p className="text-white/80">{service.description}</p>
                 </motion.div>
               ))}
             </div>

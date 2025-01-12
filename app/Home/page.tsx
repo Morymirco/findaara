@@ -30,14 +30,36 @@ export default function HomePage() {
     <>
       <Header />
       <main className="min-h-screen">
-        {/* Hero Section avec animation */}
+        {/* Hero Section avec vidéo */}
         <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-black to-red-900 pt-20"
+          className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-black to-red-900/50 pt-20"
         >
-          <div className="container mx-auto px-4 text-center text-white relative z-10">
+          {/* Vidéo en arrière-plan */}
+          <div className="absolute inset-0 -z-0 overflow-hidden">
+            <div className="absolute inset-0 bg-black/50 z-10" /> {/* Overlay pour assurer la lisibilité du texte */}
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute w-full h-full object-cover"
+            >
+              <source src="/videos/back.mp4" type="video/mp4" />
+              {/* Fallback image si la vidéo ne charge pas */}
+              <Image
+                src="/images/hero-background.jpg"
+                alt="Élevage avicole moderne"
+                fill
+                objectFit="cover"
+              />
+            </video>
+          </div>
+
+          {/* Contenu du Hero */}
+          <div className="container mx-auto px-4 max-w-5xl text-center text-white relative z-10">
             <TypewriterText
               text="Révolutionnez l'élevage avicole avec des solutions intelligentes et durables"
               className="text-5xl font-bold mb-6 text-yellow-500"
@@ -46,7 +68,7 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl mb-8 text-yellow-200"
+              className="text-xl mb-8 text-yellow-200 max-w-3xl mx-auto"
             >
               Des couveuses intelligentes. Une application mobile performante. Une productivité augmentée.
             </motion.p>
@@ -64,20 +86,11 @@ export default function HomePage() {
               </button>
             </motion.div>
           </div>
-          
-          <div className="absolute inset-0 -z-0 opacity-30">
-            <Image
-              src="/images/hero-background.jpg"
-              alt="Élevage avicole moderne"
-              fill
-              objectFit="cover"
-            />
-          </div>
         </motion.section>
 
-        {/* Section Avantages avec animation */}
+        {/* Section Avantages */}
         <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
                 Pourquoi choisir FINDAARA ?
@@ -123,11 +136,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Section Impact avec animation */}
-        <section className="py-16 bg-black">
-          <div className="container mx-auto px-4 text-center">
+        {/* Section Impact */}
+        <section className="py-16 bg-gradient-to-t from-black via-white/5 to-black">
+          <div className="container mx-auto px-4 max-w-6xl text-center">
             <MotionWrapper>
-              <h2 className="text-3xl font-bold mb-12 text-yellow-500">
+              <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-white via-yellow-500 to-yellow-500 inline-block text-transparent bg-clip-text">
                 Les impacts de FINDAARA en un coup d'œil
               </h2>
             </MotionWrapper>
@@ -160,9 +173,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Section Solutions avec animation */}
+        {/* Section Solutions */}
         <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
                 Découvrez nos solutions innovantes
@@ -238,7 +251,7 @@ export default function HomePage() {
 
         {/* Section Témoignages */}
         <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
               Ils nous font confiance
             </h2>
@@ -254,7 +267,7 @@ export default function HomePage() {
 
         {/* Section Actualités */}
         <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center mb-16 text-yellow-500">
               Restez informés
             </h2>
@@ -269,7 +282,7 @@ export default function HomePage() {
             </div>
             
             {/* Section Newsletter */}
-            <div className="max-w-2xl mx-auto text-center">
+            <div className="max-w-2xl mx-auto text-center mt-16">
               <h3 className="text-2xl font-bold mb-6 text-yellow-500">
                 Abonnez-vous à notre newsletter
               </h3>
@@ -289,7 +302,7 @@ export default function HomePage() {
             </div>
 
             {/* Catégories d'actualités */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
               {categories.map((category, index) => (
                 <Link 
                   href={`/news/category/${category.slug}`} 
@@ -310,7 +323,7 @@ export default function HomePage() {
 
         {/* Footer */}
         <footer className="bg-black text-yellow-500 py-12">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
                 <Image
@@ -359,169 +372,170 @@ export default function HomePage() {
 }
 
 const advantages = [
-  {
-    icon: '⚡',
-    title: 'Technologie avancée',
-    description: 'Couveuses automatisées avec contrôle intelligent et faible consommation énergétique'
-  },
-  {
-    icon: '🌍',
-    title: 'Soutien local',
-    description: 'Contribution active au développement de l\'aviculture en Guinée'
-  },
-  {
-    icon: '🎓',
-    title: 'Formation experte',
-    description: 'Programme complet d\'accompagnement et formation personnalisée'
-  },
-  {
-    icon: '🛠',
-    title: 'Service premium',
-    description: 'Support technique 24/7 et maintenance préventive régulière'
-  }
-]
-
-const impacts = [
-  {
-    value: '50%',
-    description: "d'augmentation de la productivité"
-  },
-  {
-    value: '10+',
-    description: 'partenariats stratégiques'
-  },
-  {
-    value: '1000+',
-    description: 'couveuses déployées'
-  },
-  {
-    value: '30%',
-    description: 'de réduction des coûts'
-  }
-]
-
-const solutions = [
-  {
-    title: "Couveuse Mini",
-    type: "Débutant",
-    description: "La solution idéale pour débuter dans l'élevage avicole",
-    image: "/images/couveuse-mini.jpg",
-    price: "XXXX GNF",
-    features: [
-      "Capacité de 100 œufs",
-      "Contrôle automatique",
-      "Application mobile basique",
-      "Garantie 1 an"
-    ]
-  },
-  {
-    title: "Couveuse Pro",
-    type: "Professionnel",
-    description: "Pour les éleveurs professionnels exigeants",
-    image: "/images/couveuse-pro.jpg",
-    price: "XXXX GNF",
-    features: [
-      "Capacité de 500 œufs",
-      "Double système de contrôle",
-      "Application mobile avancée",
-      "Garantie 2 ans"
-    ]
-  },
-  {
-    title: "Couveuse Max",
-    type: "Industriel",
-    description: "La solution industrielle haute performance",
-    image: "/images/couveuse-max.jpg",
-    price: "XXXX GNF",
-    features: [
-      "Capacité de 1000 œufs",
-      "Système intelligent AI",
-      "Application mobile premium",
-      "Garantie 3 ans"
-    ]
-  }
-]
-
-const testimonials = [
-  {
-    content: "Grâce à FINDAARA, j'ai doublé ma production en 6 mois. Le système est vraiment intuitif et efficace.",
-    author: "Mamadou Diallo",
-    role: "Éleveur Professionnel",
-    image: "/images/testimonial-1.jpg"
-  },
-  {
-    content: "Le support technique est exceptionnel. Ils sont toujours disponibles pour nous aider.",
-    author: "Fatoumata Bah",
-    role: "Gérante de Ferme",
-    image: "/images/testimonial-2.jpg"
-  },
-  {
-    content: "L'application mobile me permet de surveiller mes couveuses même à distance. C'est révolutionnaire !",
-    author: "Ibrahim Souaré",
-    role: "Entrepreneur Agricole",
-    image: "/images/testimonial-3.jpg"
-  },
-  {
-    content: "La formation fournie par l'équipe FINDAARA a été cruciale pour notre succès.",
-    author: "Aissatou Camara",
-    role: "Directrice de Coopérative",
-    image: "/images/testimonial-4.jpg"
-  },
-  {
-    content: "Excellent retour sur investissement. Nos pertes ont été réduites de 40%.",
-    author: "Ousmane Barry",
-    role: "Propriétaire de Ferme",
-    image: "/images/testimonial-5.jpg"
-  }
-]
-
-const news = [
-  {
-    title: "Nouvelle gamme de couveuses FINDAARA Mini",
-    excerpt: "Découvrez notre nouvelle gamme spécialement conçue pour les petits éleveurs, alliant performance et accessibilité.",
-    image: "/images/news-1.jpg",
-    date: "15 Mars 2024",
-    slug: "nouvelle-gamme-couveuses"
-  },
-  {
-    title: "Success Story : Ferme Diallo",
-    excerpt: "Comment la ferme Diallo a augmenté sa production de 200% en utilisant nos solutions intelligentes.",
-    image: "/images/news-2.jpg",
-    date: "10 Mars 2024",
-    slug: "success-story-ferme-diallo"
-  },
-  {
-    title: "Guide : Optimiser votre élevage",
-    excerpt: "Nos experts partagent leurs meilleures pratiques pour maximiser la productivité de votre exploitation.",
-    image: "/images/news-3.jpg",
-    date: "5 Mars 2024",
-    slug: "guide-optimisation-elevage"
-  }
-]
-
-const categories = [
-  {
-    name: "Innovation",
-    icon: "🚀",
-    count: 12,
-    slug: "innovation"
-  },
-  {
-    name: "Success Stories",
-    icon: "🌟",
-    count: 8,
-    slug: "success-stories"
-  },
-  {
-    name: "Guides",
-    icon: "📚",
-    count: 15,
-    slug: "guides"
-  },
-  {
-    name: "Événements",
-    icon: "📅",
-    count: 6,
-    slug: "evenements"
-  }
-]
+    {
+      icon: '⚡',
+      title: 'Technologie avancée',
+      description: 'Couveuses automatisées avec contrôle intelligent et faible consommation énergétique'
+    },
+    {
+      icon: '🌍',
+      title: 'Soutien local',
+      description: 'Contribution active au développement de l\'aviculture en Guinée'
+    },
+    {
+      icon: '🎓',
+      title: 'Formation experte',
+      description: 'Programme complet d\'accompagnement et formation personnalisée'
+    },
+    {
+      icon: '🛠',
+      title: 'Service premium',
+      description: 'Support technique 24/7 et maintenance préventive régulière'
+    }
+  ]
+  
+  const impacts = [
+    {
+      value: '50%',
+      description: "d'augmentation de la productivité"
+    },
+    {
+      value: '10+',
+      description: 'partenariats stratégiques'
+    },
+    {
+      value: '1000+',
+      description: 'couveuses déployées'
+    },
+    {
+      value: '30%',
+      description: 'de réduction des coûts'
+    }
+  ]
+  
+  const solutions = [
+    {
+      title: "Couveuse Mini",
+      type: "Débutant",
+      description: "La solution idéale pour débuter dans l'élevage avicole",
+      image: "/images/couveuse_1.jpg",
+      price: "XXXX GNF",
+      features: [
+        "Capacité de 100 œufs",
+        "Contrôle automatique",
+        "Application mobile basique",
+        "Garantie 1 an"
+      ]
+    },
+    {
+      title: "Couveuse Pro",
+      type: "Professionnel",
+      description: "Pour les éleveurs professionnels exigeants",
+      image: "/images/couveuse_5.jpg",
+      price: "XXXX GNF",
+      features: [
+        "Capacité de 500 œufs",
+        "Double système de contrôle",
+        "Application mobile avancée",
+        "Garantie 2 ans"
+      ]
+    },
+    {
+      title: "Couveuse Max",
+      type: "Industriel",
+      description: "La solution industrielle haute performance",
+      image: "/images/couveuse_3.jpg",
+      price: "XXXX GNF",
+      features: [
+        "Capacité de 1000 œufs",
+        "Système intelligent AI",
+        "Application mobile premium",
+        "Garantie 3 ans"
+      ]
+    }
+  ]
+  
+  const testimonials = [
+    {
+      content: "Grâce à FINDAARA, j'ai doublé ma production en 6 mois. Le système est vraiment intuitif et efficace.",
+      author: "Mamadou Diallo",
+      role: "Éleveur Professionnel",
+      image: "/images/temoin.webp"
+    },
+    {
+      content: "Le support technique est exceptionnel. Ils sont toujours disponibles pour nous aider.",
+      author: "Fatoumata Bah",
+      role: "Gérante de Ferme",
+      image: "/images/temoin.webp"
+    },
+    {
+      content: "L'application mobile me permet de surveiller mes couveuses même à distance. C'est révolutionnaire !",
+      author: "Ibrahim Souaré",
+      role: "Entrepreneur Agricole",
+      image: "/images/temoin.webp"
+    },
+    {
+      content: "La formation fournie par l'équipe FINDAARA a été cruciale pour notre succès.",
+      author: "Aissatou Camara",
+      role: "Directrice de Coopérative",
+      image: "/images/temoin.webp"
+    },
+    {
+      content: "Excellent retour sur investissement. Nos pertes ont été réduites de 40%.",
+      author: "Ousmane Barry",
+      role: "Propriétaire de Ferme",
+      image: "/images/temoin.webp"
+    }
+  ]
+  
+  const news = [
+    {
+      title: "Nouvelle gamme de couveuses FINDAARA Mini",
+      excerpt: "Découvrez notre nouvelle gamme spécialement conçue pour les petits éleveurs, alliant performance et accessibilité.",
+      image: "/images/startup.jpg",
+      date: "15 Mars 2024",
+      slug: "nouvelle-gamme-couveuses"
+    },
+    {
+      title: "Success Story : Ferme Diallo",
+      excerpt: "Comment la ferme Diallo a augmenté sa production de 200% en utilisant nos solutions intelligentes.",
+      image: "/images/ansuten.jpg",
+      date: "10 Mars 2024",
+      slug: "success-story-ferme-diallo"
+    },
+    {
+      title: "Guide : Optimiser votre élevage",
+      excerpt: "Nos experts partagent leurs meilleures pratiques pour maximiser la productivité de votre exploitation.",
+      image: "/images/odc.jpg",
+      date: "5 Mars 2024",
+      slug: "guide-optimisation-elevage"
+    }
+  ]
+  
+  const categories = [
+    {
+      name: "Innovation",
+      icon: "🚀",
+      count: 12,
+      slug: "innovation"
+    },
+    {
+      name: "Success Stories",
+      icon: "🌟",
+      count: 8,
+      slug: "success-stories"
+    },
+    {
+      name: "Guides",
+      icon: "📚",
+      count: 15,
+      slug: "guides"
+    },
+    {
+      name: "Événements",
+      icon: "📅",
+      count: 6,
+      slug: "evenements"
+    }
+  ]
+  

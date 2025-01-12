@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import ClientCarousel from '../components/ClientCarousel'
 import Header from '../components/Header'
 import MotionWrapper from '../components/MotionWrapper'
 import NewsCard from '../components/NewsCard'
 import TestimonialCard from '../components/TestimonialCard'
-import ClientCarousel from '../components/ClientCarousel'
+import { articles } from '../data/articles'
 
 export default function NewsPage() {
   const containerVariants = {
@@ -74,7 +75,7 @@ export default function NewsPage() {
 
         {/* Articles Récents */}
         <section className="py-20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-3xl font-bold text-center mb-16 text-yellow-500">
                 Articles Récents
@@ -99,7 +100,7 @@ export default function NewsPage() {
 
         {/* Témoignages */}
         <section className="py-20 bg-red-900/20">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-3xl font-bold text-center mb-16 text-yellow-500">
                 Témoignages de nos clients
@@ -118,8 +119,8 @@ export default function NewsPage() {
 
         {/* Newsletter */}
         <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto text-center">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="mx-auto text-center">
               <MotionWrapper>
                 <h2 className="text-3xl font-bold mb-6 text-yellow-500">
                   Restez informé
@@ -176,68 +177,23 @@ const categories = [
   }
 ]
 
-const articles = [
-  {
-    title: "Lancement de la nouvelle gamme FINDAARA",
-    excerpt: "Découvrez notre nouvelle génération de couveuses encore plus performantes et économiques.",
-    image: "/images/news/article1.jpg",
-    date: "15 Mars 2024",
-    slug: "nouvelle-gamme-2024"
-  },
-  {
-    title: "Success Story : La ferme Diallo",
-    excerpt: "Comment M. Diallo a augmenté sa production de 200% grâce à nos solutions.",
-    image: "/images/news/article2.jpg",
-    date: "10 Mars 2024",
-    slug: "success-story-diallo"
-  },
-  {
-    title: "Guide : Optimiser votre élevage",
-    excerpt: "Conseils pratiques pour maximiser la productivité de votre exploitation avicole.",
-    image: "/images/news/article3.jpg",
-    date: "5 Mars 2024",
-    slug: "guide-optimisation"
-  },
-  {
-    title: "FINDAARA au salon de l'agriculture",
-    excerpt: "Retrouvez-nous au salon de l'agriculture de Conakry du 20 au 25 avril.",
-    image: "/images/news/article4.jpg",
-    date: "1 Mars 2024",
-    slug: "salon-agriculture-2024"
-  },
-  {
-    title: "Formation : Maîtrisez votre couveuse",
-    excerpt: "Programme de formation complet pour les nouveaux utilisateurs.",
-    image: "/images/news/article5.jpg",
-    date: "25 Février 2024",
-    slug: "formation-utilisateurs"
-  },
-  {
-    title: "Innovation : L'IA au service de l'élevage",
-    excerpt: "Comment l'intelligence artificielle révolutionne l'aviculture moderne.",
-    image: "/images/news/article6.jpg",
-    date: "20 Février 2024",
-    slug: "ia-aviculture"
-  }
-]
-
 const testimonials = [
   {
     content: "Les solutions FINDAARA ont transformé notre exploitation. La productivité a augmenté de manière significative.",
     author: "Mamadou Diallo",
     role: "Éleveur Professionnel",
-    image: "/images/testimonials/testimonial1.jpg"
+    image: "/images/temoin.webp"
   },
   {
     content: "Le support technique est exceptionnel. L'équipe est toujours disponible pour nous aider.",
     author: "Fatoumata Bah",
     role: "Gérante de Ferme",
-    image: "/images/testimonials/testimonial2.jpg"
+    image: "/images/temoin.webp"
   },
   {
     content: "L'application mobile est un vrai plus. Je peux surveiller mes couveuses même à distance.",
     author: "Ibrahim Souaré",
     role: "Entrepreneur Agricole",
-    image: "/images/testimonials/testimonial3.jpg"
+    image: "/images/temoin.webp"
   }
 ] 
