@@ -206,7 +206,7 @@ export default function ProductDetailPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-black">
+      <main className="min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black">
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black via-white/5 to-red-900 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
@@ -237,7 +237,7 @@ export default function ProductDetailPage() {
         </section>
 
         {/* Détails du produit */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Image et galerie */}
@@ -246,7 +246,7 @@ export default function ProductDetailPage() {
                 animate={{ opacity: 1, x: 0 }}
                 className="space-y-4"
               >
-                <div className="relative h-[400px] rounded-xl overflow-hidden border border-white/10">
+                <div className="relative h-[400px] rounded-xl overflow-hidden border border-white/20 shadow-lg shadow-red-500/10">
                   <Image
                     src={product.image}
                     alt={product.title}
@@ -263,7 +263,7 @@ export default function ProductDetailPage() {
                 animate={{ opacity: 1, x: 0 }}
                 className="space-y-6"
               >
-                <div className="bg-gradient-to-br from-red-950 to-red-900/50 p-8 rounded-xl border border-white/10">
+                <div className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-8 rounded-xl border border-white/20 shadow-lg shadow-red-500/5">
                   <h2 className="text-3xl font-bold text-white mb-4">{product.price}</h2>
                   <p className="text-white/80 mb-6">{product.details.description_longue}</p>
                   
@@ -290,14 +290,14 @@ export default function ProductDetailPage() {
                 Spécifications techniques
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div className="bg-gradient-to-br from-red-950 to-red-900/50 p-6 rounded-xl border border-white/10">
+                <div className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-6 rounded-xl border border-white/20 shadow-lg shadow-red-500/5">
                   <h3 className="text-xl font-bold text-white mb-4">Dimensions et poids</h3>
                   <ul className="space-y-2">
                     <li className="text-white/80">Dimensions: {product.specifications.dimensions}</li>
                     <li className="text-white/80">Poids: {product.specifications.poids}</li>
                   </ul>
                 </div>
-                <div className="bg-gradient-to-br from-red-950 to-red-900/50 p-6 rounded-xl border border-white/10">
+                <div className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-6 rounded-xl border border-white/20 shadow-lg shadow-red-500/5">
                   <h3 className="text-xl font-bold text-white mb-4">Caractéristiques</h3>
                   <ul className="space-y-2">
                     <li className="text-white/80">Puissance: {product.specifications.puissance}</li>
@@ -312,7 +312,7 @@ export default function ProductDetailPage() {
               <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
                 Support et garantie
               </h2>
-              <div className="bg-gradient-to-br from-red-950 to-red-900/50 p-8 rounded-xl border border-white/10">
+              <div className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-8 rounded-xl border border-white/20 shadow-lg shadow-red-500/5">
                 <p className="text-white/80 mb-4">{product.details.garantie}</p>
                 <p className="text-white/80">{product.details.support}</p>
               </div>

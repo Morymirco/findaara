@@ -27,7 +27,7 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-black">
+      <main className="min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black">
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black via-white/5 to-red-900 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </section>
 
         {/* Vision et Mission */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -98,7 +98,7 @@ export default function AboutPage() {
         </section>
 
         {/* Notre Histoire */}
-        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -124,7 +124,7 @@ export default function AboutPage() {
         </section>
 
         {/* Notre Équipe */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -173,7 +173,7 @@ export default function AboutPage() {
         </section>
 
         {/* Nos Valeurs */}
-        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -204,7 +204,7 @@ export default function AboutPage() {
         </section>
 
         {/* Nos Partenaires */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -235,7 +235,7 @@ export default function AboutPage() {
         </section>
 
         {/* Nos Réalisations */}
-        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -252,7 +252,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <MotionWrapper>
               <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">

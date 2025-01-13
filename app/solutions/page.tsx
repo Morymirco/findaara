@@ -205,7 +205,7 @@ export default function SolutionsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-black">
+      <main className="min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black">
         {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-black via-white/5 to-red-900 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
@@ -237,7 +237,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Couveuses Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -272,7 +272,7 @@ export default function SolutionsPage() {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-red-950 to-red-900/50 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden shadow-lg hover:shadow-white/5 transition-all duration-300"
+                  className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden shadow-lg hover:shadow-red-500/5 transition-all duration-300"
                 >
                   <div className="relative h-48">
                     <Image
@@ -317,7 +317,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Application Mobile Section */}
-        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="flex flex-col md:flex-row items-center gap-12">
               <div className="flex-1">
@@ -369,7 +369,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Ferme Intelligente Section */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -433,7 +433,7 @@ export default function SolutionsPage() {
         </section>
 
         {/* Services Section */}
-        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">

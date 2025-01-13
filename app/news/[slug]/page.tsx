@@ -32,9 +32,9 @@ export default function ArticleDetailPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-black">
+      <main className="min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black">
         {/* Hero Section */}
-        <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-r from-black to-red-900 pt-20">
+        <section className="relative min-h-[50vh] flex items-center justify-center bg-gradient-to-r from-black via-white/5 to-red-900 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
             <Image
               src={article.image}
@@ -63,12 +63,12 @@ export default function ArticleDetailPage() {
         </section>
 
         {/* Contenu de l'article */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="prose prose-invert prose-yellow mx-auto"
+              className="prose prose-invert prose-yellow mx-auto bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-8 rounded-xl border border-white/20 shadow-lg"
             >
               <p className="text-xl text-yellow-200 mb-8">
                 {article.excerpt}
@@ -100,7 +100,7 @@ export default function ArticleDetailPage() {
         </section>
 
         {/* Articles connexes */}
-        <section className="py-16 bg-red-900/20">
+        <section className="py-16 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-3xl font-bold text-center mb-12 text-yellow-500">
               Articles connexes

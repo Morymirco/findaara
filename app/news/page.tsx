@@ -23,9 +23,9 @@ export default function NewsPage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-black">
+      <main className="min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black">
         {/* Hero Section */}
-        <section className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-black to-red-900 pt-20">
+        <section className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-black via-white/5 to-red-900 pt-20">
           <div className="absolute inset-0 -z-0 opacity-30">
             <Image
               src="/images/news-hero.jpg"
@@ -55,7 +55,7 @@ export default function NewsPage() {
         </section>
 
         {/* Catégories */}
-        <section className="py-12 bg-red-900/20">
+        <section className="py-12 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center gap-4">
               {categories.map((category, index) => (
@@ -64,7 +64,7 @@ export default function NewsPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="px-6 py-2 rounded-full bg-red-900 text-yellow-500 hover:bg-red-800 transition-colors"
+                  className="px-6 py-2 rounded-full bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm text-white hover:from-red-900/80 hover:to-black/60 transition-all duration-300 border border-white/10 hover:border-white/20"
                 >
                   {category.icon} {category.name}
                 </motion.button>
@@ -74,7 +74,7 @@ export default function NewsPage() {
         </section>
 
         {/* Articles Récents */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-3xl font-bold text-center mb-16 text-yellow-500">
@@ -99,7 +99,7 @@ export default function NewsPage() {
         </section>
 
         {/* Témoignages */}
-        <section className="py-20 bg-red-900/20">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-3xl font-bold text-center mb-16 text-yellow-500">
@@ -118,7 +118,7 @@ export default function NewsPage() {
         </section>
 
         {/* Newsletter */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="mx-auto text-center">
               <MotionWrapper>
@@ -140,9 +140,9 @@ export default function NewsPage() {
                 <input
                   type="email"
                   placeholder="Votre adresse email"
-                  className="flex-1 px-4 py-3 rounded-full bg-red-900/30 border border-red-700 text-yellow-100 placeholder-yellow-200/50 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  className="flex-1 px-4 py-3 rounded-full bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
-                <button className="bg-red-600 hover:bg-red-700 text-yellow-500 px-8 py-3 rounded-full transition-colors">
+                <button className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-3 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/20">
                   S'abonner
                 </button>
               </motion.form>

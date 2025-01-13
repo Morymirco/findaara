@@ -33,7 +33,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen">
+      <main className="min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black">
         {/* Hero Section avec vidéo */}
         <motion.section
           initial={{ opacity: 0 }}
@@ -66,13 +66,13 @@ export default function HomePage() {
           <div className="container mx-auto px-4 max-w-5xl text-center text-white relative z-10">
             <TypewriterText
               text="Révolutionnez l'élevage avicole avec des solutions intelligentes et durables"
-              className="text-6xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text"
             />
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl mb-8 text-white/90 max-w-3xl mx-auto"
+              className="text-base md:text-lg lg:text-xl mb-6 md:mb-8 text-white/90 max-w-3xl mx-auto px-4"
             >
               Des couveuses intelligentes. Une application mobile performante. Une productivité augmentée.
             </motion.p>
@@ -80,16 +80,16 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex justify-center gap-4"
+              className="flex flex-col md:flex-row justify-center gap-4 px-4"
             >
               <Link 
                 href="/solutions"
-                className="bg-gradient-to-r from-red-600 to-red-700 text-white font-bold py-3 px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/20"
+                className="bg-gradient-to-r from-red-600 to-red-700 text-white text-sm md:text-base font-bold py-3 px-6 md:px-8 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/20"
               >
                 Découvrir nos solutions
               </Link>
               <button 
-                className="bg-gradient-to-r from-white to-yellow-500 text-black font-bold py-3 px-8 rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-yellow-500/20"
+                className="bg-gradient-to-r from-white to-yellow-500 text-black text-sm md:text-base font-bold py-3 px-6 md:px-8 rounded-full hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-yellow-500/20"
               >
                 Télécharger la brochure
               </button>
@@ -97,11 +97,11 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* Section Avantages avec animation */}
-        <section className="py-20 bg-gradient-to-b from-black to-white/5">
+        {/* Section Avantages */}
+        <section className="py-12 md:py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
-              <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text px-4">
                 Pourquoi choisir FINDAARA ?
               </h2>
             </MotionWrapper>
@@ -110,14 +110,14 @@ export default function HomePage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-4 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
             >
               {advantages.map((advantage, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
-                  className="relative overflow-hidden bg-red-900 rounded-xl p-8 transition-all duration-300 group"
+                  className="relative overflow-hidden bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm rounded-xl p-6 md:p-8 transition-all duration-300 group"
                 >
                   {/* Cercle décoratif */}
                   <div className="absolute -right-8 -top-8 w-24 h-24 bg-yellow-500/10 rounded-full" />
@@ -128,12 +128,12 @@ export default function HomePage() {
                   </div>
                   
                   {/* Titre */}
-                  <h3 className="text-xl font-bold mb-4 text-yellow-500 relative z-10">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-yellow-500 relative z-10">
                     {advantage.title}
                   </h3>
                   
                   {/* Description */}
-                  <p className="text-yellow-100/90 relative z-10 leading-relaxed">
+                  <p className="text-sm md:text-base text-yellow-100/90 relative z-10 leading-relaxed">
                     {advantage.description}
                   </p>
                   
@@ -145,11 +145,11 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Section Impact avec animation */}
-        <section className="py-16 bg-gradient-to-t from-black via-white/5 to-black">
+        {/* Section Impact */}
+        <section className="py-12 md:py-16 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl text-center">
             <MotionWrapper>
-              <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text px-4">
                 Les impacts de FINDAARA en un coup d'œil
               </h2>
             </MotionWrapper>
@@ -158,24 +158,24 @@ export default function HomePage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-4 gap-8"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8"
             >
               {impacts.map((impact, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
-                  className="bg-red-900 p-6 rounded-lg shadow-lg"
+                  className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-4 md:p-6 rounded-lg shadow-lg"
                 >
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
-                    className="text-4xl font-bold text-yellow-500 mb-2"
+                    className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-500 mb-2"
                   >
                     {impact.value}
                   </motion.div>
-                  <p className="text-yellow-100">{impact.description}</p>
+                  <p className="text-sm md:text-base text-yellow-100">{impact.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -183,7 +183,7 @@ export default function HomePage() {
         </section>
 
         {/* Section Solutions avec animation */}
-        <section className="py-20 bg-black">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <MotionWrapper>
               <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
@@ -202,7 +202,7 @@ export default function HomePage() {
                   key={index}
                   variants={itemVariants}
                   whileHover={{ y: -10 }}
-                  className="bg-gradient-to-b from-red-950 to-red-900/80 rounded-xl overflow-hidden shadow-lg border border-red-800/20"
+                  className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg border border-white/10 hover:border-white/20 transition-all duration-300"
                 >
                   {/* Image avec overlay */}
                   <div className="relative">
@@ -262,7 +262,7 @@ export default function HomePage() {
         </section>
 
         {/* Section Témoignages */}
-        <section className="py-20 bg-gradient-to-b from-black via-white/5 to-black">
+        <section className="py-20 bg-gradient-to-b from-black via-red-950/10 to-black">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
               Ils nous font confiance
@@ -278,7 +278,7 @@ export default function HomePage() {
         </section>
 
         {/* Section Actualités */}
-        <section className="py-20 bg-black">
+        <section className="py-20 bg-gradient-to-t from-black/50 via-transparent to-black/50">
           <div className="container mx-auto px-4 max-w-6xl">
             <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-white via-yellow-500 to-white inline-block text-transparent bg-clip-text">
               Restez informés
@@ -294,20 +294,20 @@ export default function HomePage() {
             </div>
             
             {/* Section Newsletter */}
-            <div className="max-w-2xl mx-auto text-center mt-16">
-              <h3 className="text-2xl font-bold mb-6 text-white">
+            <div className="max-w-2xl mx-auto text-center mt-16 px-4">
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-white">
                 Abonnez-vous à notre newsletter
               </h3>
-              <p className="text-white/80 mb-8">
+              <p className="text-sm md:text-base text-white/80 mb-6 md:mb-8">
                 Recevez nos dernières actualités et mises à jour directement dans votre boîte mail
               </p>
-              <div className="flex gap-4 max-w-md mx-auto">
+              <div className="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Votre adresse email"
-                  className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50"
+                  className="flex-1 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/50 text-sm md:text-base"
                 />
-                <button className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-3 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/20">
+                <button className="bg-gradient-to-r from-red-600 to-red-700 text-white px-6 md:px-8 py-3 rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/20 text-sm md:text-base">
                   S'abonner
                 </button>
               </div>
@@ -319,7 +319,7 @@ export default function HomePage() {
                 <Link 
                   href={`/news/category/${category.slug}`} 
                   key={index}
-                  className="bg-red-900/50 p-4 rounded-lg text-center group hover:bg-red-800 transition-colors"
+                  className="bg-gradient-to-br from-red-950/80 to-black/50 backdrop-blur-sm p-4 rounded-lg text-center group hover:bg-red-900/50 transition-all duration-300 border border-white/10 hover:border-white/20"
                 >
                   <div className="text-3xl mb-2">{category.icon}</div>
                   <h4 className="text-yellow-500 font-semibold mb-2">{category.name}</h4>
