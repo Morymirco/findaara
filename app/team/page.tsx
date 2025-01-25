@@ -137,7 +137,7 @@ const team = [
     name: "Mory Koulibaly",
     role: "Ingénieur Logiciel",
     description: "Expert en développement logiciel et architecture des systèmes",
-    image: "/images/team/mory.jpg",
+    image: "/images/team/mor.jpg",
     social: {
       linkedin: "https://linkedin.com/in/mory",
       twitter: "https://twitter.com/mory"

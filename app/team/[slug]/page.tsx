@@ -110,10 +110,10 @@ const teamMembers: { [key: string]: TeamMember } = {
     ]
   },
   "mory-koulibaly": {
-    name: "Mory Koulibaly",
+    name: "Mory Mirco Koulibaly",
     role: "Ingénieur Logiciel",
     description: "Expert en développement logiciel et architecture des systèmes",
-    image: "/images/team/mory.jpg",
+    image: "/images/team/mor.jpg",
     bio: "Expert en développement logiciel avec une solide expérience dans la conception et l'implémentation de solutions innovantes. Mory dirige le développement technique de FINDAARA, en mettant l'accent sur la qualité et la performance des solutions.",
     expertise: [
       "Architecture Logicielle",

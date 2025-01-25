@@ -290,10 +290,10 @@ const team = [
     image: "/images/team/josiane.jpg"
   },
   {
-    name: "Mory Koulibaly",
+    name: "Mory Mirco Koulibaly",
     role: "Développeur",
     description: "Responsable de la conception de l'application mobile",
-    image: "/images/team/mory.jpg"
+    image: "/images/team/mor.jpg"
   },
   {
     name: "Mouloukou Souleymane Deen Sylla",
